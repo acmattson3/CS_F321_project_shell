@@ -34,6 +34,8 @@ int main()
       cout << "  print - Print the current PID" << endl;
       cout << "  help  - Display this help information" << endl;
     }
+    else if (command == "")
+      continue;
     else
     {
       // Execute an external command
