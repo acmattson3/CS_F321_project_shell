@@ -168,7 +168,17 @@ int main()
                 else if (pid > 0)
                 {
                     // Parent process
-                    // Do nothing
+                    int status;
+                    if (waitpid(pid, &status, 0) == -1)
+                    {
+                        perror("waitpid");
+                        exit(EXIT_FAILURE);
+                    }
+                    // Remove extra '$' character from last line of command output
+                    if (WIFEXITED(status) && WEXITSTATUS(status) == EXIT_SUCCESS)
+                    {
+                        // cout << "$$ ";
+                    }
                 }
                 else
                 {
@@ -176,12 +186,6 @@ int main()
                     cout << "Failed to fork" << endl;
                 }
             }
-        }
-
-        // Print the prompt for the next command
-        if (!input.empty())
-        {
-            cout << "$ ";
         }
     }
 
