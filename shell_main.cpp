@@ -25,7 +25,7 @@ int main()
     }
     else if (command == "print")
     {
-      // TODO: Print the current PID
+      cout << "Current PID: " << getpid() << endl;
     }
     else if (command == "help")
     {
