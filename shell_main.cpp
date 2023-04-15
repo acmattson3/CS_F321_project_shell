@@ -29,7 +29,10 @@ int main()
     }
     else if (command == "help")
     {
-      // TODO: Print help information
+      cout << "Available commands:" << endl;
+      cout << "  exit  - Terminate the shell" << endl;
+      cout << "  print - Print the current PID" << endl;
+      cout << "  help  - Display this help information" << endl;
     }
     else
     {
