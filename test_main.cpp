@@ -156,6 +156,9 @@ int main()
 
             if (!token_group.empty())
             {
+
+                if (token_group == "exit")
+                    exit(1);
                 // Execute each token group in a separate child process
                 pid_t pid = fork();
 
