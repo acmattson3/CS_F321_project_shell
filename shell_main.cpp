@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <unistd.h>
+#include <sys/wait.h>
 
 using namespace std;
 
