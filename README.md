@@ -76,7 +76,7 @@ the shell forking a new process and then executing a program.
 words immediately following a command are called arguments and each
 argument belongs to the command it most closely follows. The order of
 arguments matters, and they are numbered from left to right, starting at one.
-System Calls:
+**System Calls:**
 * fork()
 * execvp() or execlp()
 * wait()
