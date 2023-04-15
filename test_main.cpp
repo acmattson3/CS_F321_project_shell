@@ -56,7 +56,6 @@ void exitShell()
 void printPID()
 {
     cout << "Current PID: " << getpid() << endl;
-    cout << "$";
 }
 
 void printHelp()
@@ -65,7 +64,6 @@ void printHelp()
     cout << "  exit  - Terminate the shell" << endl;
     cout << "  print - Print the current PID" << endl;
     cout << "  help  - Display this help information" << endl;
-    cout << "$";
 }
 
 void execute_command(const string &input)
@@ -144,6 +142,7 @@ int main()
         {
             input = input.substr(0, 100);
             cout << "Input truncated to 100 characters" << endl;
+            cout << input << endl;
         }
 
         // Split the input into token groups based on the "&" character
@@ -177,6 +176,12 @@ int main()
                     cout << "Failed to fork" << endl;
                 }
             }
+        }
+
+        // Print the prompt for the next command
+        if (!input.empty())
+        {
+            cout << "$ ";
         }
     }
 
